@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Stage Clock</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000000;
+      color: #00FF66;
+      font-family: 'Consolas', 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .title {
+      font-size: 2.5rem;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      margin-bottom: 20px;
+      letter-spacing: 4px;
+    }
+    #timer {
+      font-size: 8vw;
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">EVENT STARTS IN</div>
+  <div id="timer">Loading...</div>
+
+  <script>
+    // Set your target end date/time (ISO Format: YYYY-MM-DDTHH:MM:SS)
+    const TARGET_DATE = new Date("2026-09-03T21:21:00").getTime();
+    let launched = false;
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const diff = TARGET_DATE - now;
+
+      if (diff <= 0 && !launched) {
+        launched = true;
+        document.getElementById("timer").innerText = "00d 00:00:00";
+        
+        // Triggers the Python server to spawn powerpnt.exe /s
+        fetch('/start-presentation')
+          .then(() => console.log("PowerPoint launched."))
+          .catch(err => console.error(err));
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      const pad = (num) => String(num).padStart(2, '0');
+      document.getElementById("timer").innerText = 
+        `${days}d ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
