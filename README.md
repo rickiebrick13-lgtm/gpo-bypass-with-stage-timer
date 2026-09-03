@@ -2,7 +2,7 @@ This is a simple bunch of files you can load into your air-gapped workstation fo
 
 Critical:
 1. Check if Python is installed, open cmd and type python --version
-2. If it displays Python 3.x.x, proceed, else try typing py --version, if that fails too, you don't have python runtimes and will need your companies admim approval to install python or enable a local portable executable.
+2. If it displays Python 3.x.x, proceed, else try typing py --version, if that fails too, you don't have python runtimes and will need your company admin approval to install python or enable a local portable executable.
 3. If you're out of luck, then use the files in the VBSclock folder.
 
 Note (python version):
