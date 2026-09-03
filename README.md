@@ -22,6 +22,6 @@ Note (vbscript version):
 3. In timeScript.vbs, change PresentationFile = "powerpoint.pptx" your powerpoint presentation's name.
 4. In FORCE_Launch.bat, in line 6, switch Test.pptx with your pptx. do not change anything else.
 5. After double clicking timeScript.vbs, it will run in the background, just open index.html, when the timer hits 0, the powerpoint will replace the browser and be on top of it in full-screen mode.
-6. In emergency, hit the spacebar, it'll launch the powerpoint in full-screen mode.
+6. In emergency, open FORCE_Launch.bat, it'll launch the powerpoint in full-screen mode.
 
 PS. You can use Notepad to alter the files, just no bells and whistles like IDEs. But if your company blocks Notepad then...LOL
