@@ -13,6 +13,7 @@ Note (python version):
 4. To alter the time, change line 40 within new Date(...) to whatever you expect, according to line 39 comment.
 5. Before start, remember to close the target pptx first.
 6. To start the whole thing, use CMD or PS, and cd to the folder containing the files then python server.py, and crtl+click the link.
+7. For emergency launch, hit the spacebar.
 
 Note (vbscript version):
 0. Use the files in the VBSclock folder.
