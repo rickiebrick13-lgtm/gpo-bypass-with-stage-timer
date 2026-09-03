@@ -13,13 +13,15 @@ Note (python version):
 4. To alter the time, change line 40 within new Date(...) to whatever you expect, according to line 39 comment.
 5. Before start, remember to close the target pptx first.
 6. To start the whole thing, use CMD or PS, and cd to the folder containing the files then python server.py, and crtl+click the link.
-7. For emergency launch, hit the spacebar.
+7. For emergency launch, hit the spacebar, it'll launch the powerpoint in full-screen mode.
 
 Note (vbscript version):
 0. Use the files in the VBSclock folder.
 1. All files have to be in the same folder
 2. In timeScript.vbs, change TargetTime = "YYYY-MM-DD HH:MM:SS" to alter the time
 3. In timeScript.vbs, change PresentationFile = "powerpoint.pptx" your powerpoint presentation's name.
-4. After double clicking timeScript.vbs, it will run in the background, just open index.html, when the timer hits 0, the powerpoint will replace the browser and be on top of it in full-screen mode.
+4. In FORCE_Launch.bat, in line 6, switch Test.pptx with your pptx. do not change anything else.
+5. After double clicking timeScript.vbs, it will run in the background, just open index.html, when the timer hits 0, the powerpoint will replace the browser and be on top of it in full-screen mode.
+6. In emergency, hit the spacebar, it'll launch the powerpoint in full-screen mode.
 
 PS. You can use Notepad to alter the files, just no bells and whistles like IDEs. But if your company blocks Notepad then...LOL
