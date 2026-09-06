@@ -67,6 +67,25 @@
 
     updateTimer();
     setInterval(updateTimer, 1000);
+  // Function to trigger presentation launch via Python backend
+  function triggerLaunch() {
+    if (launched) return;
+    launched= true;
+    console.log("Triggering early launch...");
+    fetch('/start-presentation')
+      .then(response => console.log("Launch signal sent!"))
+      .catch(err => console.error("Error launching:", err));
+  }
+
+  // Listen for keyboard input
+  document.addEventListener('keydown', function(event) {
+    // Check if the pressed key is the Spacebar (code "Space" or keyCode 32)
+    if (event.code === 'Space' || event.keyCode === 32) {
+      event.preventDefault(); // Prevent page scrolling down
+      triggerLaunch();
+    }
+  });
+
   </script>
 </body>
 </html>
