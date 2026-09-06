@@ -4,10 +4,11 @@ Critical:
 1. Check if Python is installed, open cmd and type python --version
 2. If it displays Python 3.x.x, proceed, else try typing py --version, if that fails too, you don't have python runtimes and will need your company admin approval to install python or enable a local portable executable.
 3. If you're out of luck, then use the files in the VBSclock folder.
+4. index.html is the timer display page.
 
 Note (python version):
 0. Use the files in pyClocker folder.
-1. All files have to be in the same folder for simplicity.
+1. All files have to be in the same folder including index.html and your pptx.
 2. In server.py, change line 7 "Test.pptx" to your "powerpoint.pptx" 
 3. In launch.py, change line 7 "Test.pptx" to your "powerpoint.pptx" 
 4. To alter the time, change line 40 within new Date(...) to whatever you expect, according to line 39 comment.
@@ -17,7 +18,7 @@ Note (python version):
 
 Note (vbscript version):
 0. Use the files in the VBSclock_withJSBackup folder.
-1. All files have to be in the same folder
+1. All files have to be in the same folder including index.html and your pptx.
 2. In timeScript.vbs, change targetTimeStr to alter the time
 3. In timeScript.vbs, change presentationPath to your powerpoint presentation's path.
 4. In FORCE_Launch.bat, in line 6, switch Test.pptx with your pptx. do not change anything else.
@@ -26,7 +27,7 @@ Note (vbscript version):
 
 Note (JS backup)
 0. Use the files in the JSBackup folder.
-1. All files have to be in the same folder
+1. All files have to be in the same folder including index.html and your pptx.
 2. In launch.js, change the time in quotations to target T-0
 3. After double clicking launch.js, it will run in the background, just open index.html, when the timer hits 0, the powerpoint will replace the browser and be on top of it in full-screen mode.
 4. In emergency, open FORCE_Launch.bat, it'll launch the powerpoint in full-screen mode.
